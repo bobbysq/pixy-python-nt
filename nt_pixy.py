@@ -35,11 +35,14 @@ while 1:
     if count > 0:
         print('frame %3d:' % (frame))
         frame = frame + 1
-        for index in range(0, count):
-            #print('[BLOCK: SIG=%d X=%3d Y=%3d WIDTH=%3d HEIGHT=%3d]' % (blocks[index].m_signature, blocks[index].m_x, blocks[index].m_y, blocks[index].m_width, blocks[index].m_height))
-            pixyTable.putNumber('sig', blocks[index].m_signature)
-            pixyTable.putNumber('x', blocks[index].m_x)
-            pixyTable.putNumber('y', blocks[index].m_y)
-            pixyTable.putNumber('width', blocks[index].m_width)
-            pixyTable.putNumber('height', blocks[index].m_height)
-            pixyTable.putNumber('angle', blocks[index].m_angle)
+        #print('[BLOCK: SIG=%d X=%3d Y=%3d WIDTH=%3d HEIGHT=%3d]' % (blocks[index].m_signature, blocks[index].m_x, blocks[index].m_y, blocks[index].m_width, blocks[index].m_height))
+        pixyTable.putNumber('sig', blocks[0].m_signature)
+        pixyTable.putNumber('x', blocks[0].m_x)
+        pixyTable.putNumber('y', blocks[0].m_y)
+        pixyTable.putNumber('width', blocks[0].m_width)
+        pixyTable.putNumber('height', blocks[0].m_height)
+        pixyTable.putNumber('angle', blocks[0].m_angle)
+        pixyTable.putNumber('age', blocks[0].m_age)
+        pixyTable.putBoolean('visible', True)
+    else:
+        pixyTable.putBoolean('visible', False)
